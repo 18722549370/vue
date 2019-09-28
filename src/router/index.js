@@ -7,9 +7,10 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/',  //根路径默认组件
       name: 'HelloWorld',
       component: HelloWorld
     }
-  ]
+  ],
+  mode: 'history' //去掉地址栏#
 })
