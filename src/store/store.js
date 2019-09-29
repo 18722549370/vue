@@ -12,7 +12,7 @@ export default new vuex.Store({
   },
   getters: {  //处理store.js中的数据
     salePrice(state){
-      let discount = state.dataTop.map((disNum) => {
+      let discount = state.dataTop.map((disNum) => { //map()函数返回新数组
         return {
           name: '--' + disNum.name + '--',
           price: disNum.price/2
@@ -23,7 +23,7 @@ export default new vuex.Store({
   },
   mutations: { //处理store.js中的事件方法
     btnPrice(state){
-      state.dataTop.forEach((item) => {
+      state.dataTop.forEach((item) => { //forEach()函数改变原数组
         item.price-=1
       })
     }
