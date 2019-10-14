@@ -7,11 +7,10 @@ import Second from '@/components/Second'
 Vue.use(Router)
 
 //给Router对象添加统一的返回方法
-Router.prototype.goBack = function () {
+Router.prototype.backPage = function () {
   this.isBack = true
   if (window.history.length > 1) {
     window.history.go(-1) //后退一页
-    // this.$router.back()
   }
 }
 

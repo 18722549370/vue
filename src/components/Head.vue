@@ -1,7 +1,7 @@
 <template>
   <header>
     <ul class="clearfix">
-      <li @click="goBack()">{{leftTitle}}</li>
+      <li @click="goBack">{{leftTitle}}</li>
       <li>{{centerTitle}}</li>
       <li v-show="isFlag">{{rightTitle}}</li>
     </ul>
@@ -28,8 +28,13 @@ export default {
       default: true
     },
     //返回按钮
-    goBack: {
-      type: Function
+    // goBack: {
+    //   type: Function
+    // }
+  },
+  methods: {
+    goBack () {
+      this.$router.backPage()
     }
   }
 }

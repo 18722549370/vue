@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Head leftTitle="左边" centerTitle="第二页" rightTitle="侧边栏" :goBack="go"></Head>
+    <Head leftTitle="左边" centerTitle="第二页" rightTitle="侧边栏"></Head>
     <main>
       <!-- 第一种传参方式 -->
       <p>我是第二个页面，取得传过来的值是：{{this.$route.params.itemData.name}}</p>
@@ -17,8 +17,14 @@ export default {
   },
   methods: {
     go () {
-      this.$router.goBack()
+      this.$router.backPage()
     }
+  },
+  beforeRouteEnter (to,from, next) {
+    console.log(to,from)
+    next(vm => {
+      console.log(vm)
+    })
   }
 }
 </script>
