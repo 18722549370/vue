@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/store' //   @ /src
+import Head from '@/components/Head'
 import First from '@/components/First' //默认组件
 import Second from '@/components/Second'
 Vue.use(Router)
@@ -12,6 +13,9 @@ Router.prototype.goBack = function () {
 }
 
 export default new Router({
+  /*
+   * path: 浏览器端的地址 
+  */
   routes: [
     // {
     //   path: '/',  //根路径默认组件
@@ -27,6 +31,11 @@ export default new Router({
       path: '/Second',
       name: 'Second',
       component: Second
+    },
+    {
+      path: '/Head',
+      name: 'Head',
+      component: Head
     }
   ],
   mode: 'history' //去掉地址栏#

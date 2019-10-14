@@ -1,12 +1,6 @@
 <template>
   <div>
-    <header>
-      <ul>
-        <li>返回</li>
-        <li>标题</li>
-        <li>菜单</li>
-      </ul>
-    </header>
+    <Head leftTitle="返回" centerTitle="首页" :isFlag="false"></Head>
     <main>
       <ul>
         <li v-for="(item,index) in mockList" :key="index" @click=nav(index)>
@@ -19,7 +13,11 @@
   </div>
 </template>
 <script>
+import Head from './Head'
 export default {
+  components: {
+    Head
+  },
   data () {
     return {
       mockList:[
@@ -32,18 +30,13 @@ export default {
   },
   methods: {
     nav(index){
-      this.$router.push({name: 'Second',params:{itemData:this.mockList[index]}})
+      this.$router.push({name: 'Second',params:{itemData:this.mockList[index]}}) //路由跳转一
+      // this.$router.push({path:'/Second',query:{itemData:this.mockList[index]}}) //路由跳转二 
     }
   }
 }
 </script>
 <style scoped>
-header ul {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #ff0000;
-}
 main ul {
   margin: 0 10px;
 }

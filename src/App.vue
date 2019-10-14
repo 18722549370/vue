@@ -49,7 +49,7 @@ ul {
 .Router {
   position: absolute;
   width: 100%;
-  transition: all .5s ease;
+  transition: all .5s linear;
 }
 .slide-left-enter, .slide-right-leave-active {
   opacity: 0;
