@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Head leftTitle="返回" centerTitle="首页" :isFlag="false"></Head>
+    <defined-head leftTitle="返回" centerTitle="首页" :isFlag="false"></defined-head>
     <main>
       <ul>
         <li v-for="(item,index) in mockList" :key="index" @click=nav(index)>
@@ -13,10 +13,10 @@
   </div>
 </template>
 <script>
-import Head from './Head'
+import definedHead from './Head' //可自定义引入组件名
 export default {
   components: {
-    Head
+    definedHead
   },
   data () {
     return {
