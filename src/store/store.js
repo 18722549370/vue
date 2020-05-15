@@ -8,7 +8,10 @@ export default new vuex.Store({
       { name: '马化腾', price: 180 },
       { name: '马地', price: 60 },
       { name: '马天', price: 10 }
-    ] 
+    ],
+    userinfo: {
+      tokenId: ''
+    } //保存用户信息
   },
   getters: {  //处理store.js中的数据
     salePrice(state){
@@ -19,6 +22,12 @@ export default new vuex.Store({
         }
       })
       return discount 
+    },
+    getDataTop(state){
+      return state.dataTop
+    },
+    getUserInfo(state){ //获取用户信息
+      return state.userinfo
     }
   },
   mutations: { //处理store.js中的事件方法
@@ -26,6 +35,9 @@ export default new vuex.Store({
       state.dataTop.forEach((item) => { //forEach()函数改变原数组
         item.price-=1
       })
+    },
+    setUserInfo(state, val){
+      state.userinfo.tokenId = val
     }
   },
   actions: { //异步处理mutations里面的事件方法

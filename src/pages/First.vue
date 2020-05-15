@@ -1,6 +1,7 @@
 <template>
   <div>
-    <defined-head leftTitle="返回" centerTitle="首页" :isFlag="false"></defined-head>
+    <!-- <defined-head leftTitle="返回" centerTitle="首页" :isFlag="false"></defined-head> -->
+    <definedHead leftTitle="返回" centerTitle="首页" :isFlag="false"></definedHead>
     <main>
       <ul>
         <li v-for="(item,index) in mockList" :key="index" @click=nav(index)>
@@ -9,14 +10,22 @@
           <p>年龄：{{item.age}}</p>
         </li>
       </ul>
+      <!-- 插槽使用 -->
+      <slot-template :param1="'父组件传参'">
+        <p>默认插槽的值</p>
+        <p slot="header">具名插槽的值---头部插槽</p>
+        <p slot="footer">具名插槽的值---尾部插槽</p>
+      </slot-template>
     </main>
   </div>
 </template>
 <script>
-import definedHead from './Head' //可自定义引入组件名
+import definedHead from '@/components/Head' //可自定义引入组件名
+import slotTemplate from '@/component/Slot'
 export default {
   components: {
-    definedHead
+    definedHead,
+    slotTemplate
   },
   data () {
     return {

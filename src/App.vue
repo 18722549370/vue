@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <!-- <p>
-      <router-link to='/First'>Home页面</router-link>
-      <router-link to='/Second'>Company页面</router-link>
-    </p>
-    <router-view/> -->
     <transition :name="transitionName">
       <router-view class="Router"/>
     </transition>
@@ -60,5 +55,8 @@ ul {
   opacity: 0;
   -webkit-transform: translate(-100%,0);
   transform: translate(-100%,0);
+}
+.center {
+  text-align: center;
 }
 </style>
