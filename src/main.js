@@ -4,11 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store/store'
-
+import axios from 'axios'
 Vue.config.productionTip = false
+Vue.prototype.$axios = axios
 router.beforeEach((to, from, next) => {
   let tokenId = store.getters.getUserInfo.tokenId
-  console.error(to)
   if (to.meta.isChecked) { //需要登录
     if (tokenId) { //已经登录
       next()
