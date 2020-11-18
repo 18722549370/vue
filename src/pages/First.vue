@@ -43,6 +43,9 @@ export default {
       first: []
     }
   },
+  beforeMount () {
+    console.error('vuex', this.$store.state.dataTop) //获取vuex值
+  },
   mounted () {
     this.$axios.get('../../static/test.json').then(response => {
         this.first = response.data.first

@@ -6,7 +6,7 @@
 <script>
 export default {
   created () {
-    console.error(this.$route.query)
+    console.error(this.$route)
   },
   methods: {
   }
